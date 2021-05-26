@@ -1,0 +1,13 @@
+Este paquete externo sirve para escribir caracteres de texto para entrada y salida en pantalla o como asignación de variables e incluso para archivos de texto o respuesta a peticiones de servidores.
+
+Los string manejan diferentes tipos de declaración, está la declaración de **literal interpretado** que se escribe usando comillas dobles **"string"**, no permite el uso de escape de caracteres ni saltos de linea y el **literal row** que si permite el salto de linea, este ultimo se escribe usando comillas simples invertidas **` string `**. 
+
+El paquete fmt maneja varias funciones dentro de las cuales esta:
+
+- **print** = imprime todo en una misma linea.
+- **printf** = imprime usando un string con la especificación del formato a usar.
+- **printnl** = cada vez que se llame imprime y agrega una nueva linea al final.
+- **sprint, sprintf, sprintln** = retorna su contenido como un string, no formatea espacios de forma automática.
+- **fprint, fprintf, fprintln** = tiene como parámetro io.write, este puede escribir para tipos de archivos o enviar textos como respuesta a una petición de un servidor.
+
+Esta función print agrega de forma automática los espacios entre variables concatenadas, es decir da formato al texto, a continuación un programa de ejemplo con su respectiva salida.
