@@ -1,0 +1,23 @@
+JSON es una forma de formatear informaicion. pagina json.org
+es un formato ligero de intercambio de datos.
+Leerlo y escribirlo es simple para humanos,
+ mientras que para las máquinas es simple interpretarlo y generarlo.
+
+ JSON está constituído por dos estructuras:
+
+    Una colección de pares de nombre/valor. En varios lenguajes esto es conocido como un objeto, registro,
+	estructura, diccionario, tabla hash, lista de claves o un arreglo asociativo.
+
+    Una lista ordenada de valores. En la mayoría de los lenguajes, esto se implementa como arreglos,
+	vectores, listas o sequencias.
+
+Marshaler: es agarrar un objeto almacenado en memoria y almacenarle un cambio a esa representacion
+para que quede de forma adecuada y se pueda almacenar o transmitir.
+
+En Go se utiliza el paquete "encoding/json" asi:
+    Se puede usar Marshal y Unmarchal cuando tenemos o queremos almacenar el JSON.
+    Si no se quiere almacenar se usa Encoder y Decoder para recibir o enviar directo a la red.
+
+
+
+

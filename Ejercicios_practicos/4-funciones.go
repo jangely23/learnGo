@@ -4,6 +4,8 @@ crea un valor tipo persona y llama el metodo */
 
 package main
 
+import "fmt"
+
 type persona struct {
 	nombre   string
 	apellido string
@@ -20,5 +22,5 @@ func main() {
 }
 
 func (p persona) presentarse() {
-	println("Mi nombre es:", p.nombre, p.apellido, "y tengo", p.edad, "años")
+	fmt.Println("Mi nombre es:", p.nombre, p.apellido, "y tengo", p.edad, "años")
 }
