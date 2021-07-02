@@ -20,12 +20,27 @@ import (
 func main() {
 	clave := `clave123`
 
+	//crear hash para clave
 	bs, err := bcrypt.GenerateFromPassword([]byte(clave), 4) //los argumentos son contraseña en slice de byte y el costo
 
 	if err != nil {
 		fmt.Println("error es: ", err)
 	}
 	fmt.Println(clave)
-	fmt.Println(bs)
+	fmt.Println(bs)         //muestra el hash en slice de bytes
+	fmt.Println(string(bs)) //muesta el hash en caracteres que se almacenaria en una BD
+
+	//verificar si contraseña es correcta
+
+	claveLogin := `clave12345`
+
+	err = bcrypt.CompareHashAndPassword(bs, []byte(claveLogin)) //compara que la has de la claveLogin sea igual al de bs y retorna err en caso de ser diferente
+
+	if err != nil {
+		fmt.Println("clave errada")
+		return
+	} else {
+		fmt.Println("login exitoso")
+	}
 
 }
