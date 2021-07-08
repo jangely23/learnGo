@@ -1,0 +1,12 @@
+
+Es la caracteristica mas importante de Go
+aprovecha los procesadores de multiples nucleos
+generando mayor eficiencia.
+
+paralelismo 
+es cuando se tiene un procesador de varios nucleos y puede al mismo ejecutar varios hilos de procesos
+
+concurrencia
+permite hacer varias cosas al mismo tiempo y no necesariamente al mismo tiempo.
+
+Patron concurrente

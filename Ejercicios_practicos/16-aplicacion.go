@@ -2,7 +2,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 )
 
 type usuario struct {
@@ -48,8 +50,11 @@ func main() {
 
 	usuarios := []usuario{u1, u2, u3}
 
-	fmt.Println(usuarios)
+	fmt.Println(usuarios, "\n")
 
-	err := json.Encode(usuarios)
+	err := json.NewEncoder(os.Stdout).Encode(usuarios)
+	if err != nil {
+		fmt.Println(err)
+	}
 
 }
