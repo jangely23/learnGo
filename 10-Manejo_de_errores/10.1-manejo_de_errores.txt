@@ -1,0 +1,14 @@
+Go no maneja excepciones
+las excepciones dan como resultado un codigo complicado, y tiende a etiquetar errores comunes como excepcionales.
+ 
+En go los retornos multivalor de las funciones permite el reporte de un error sin sobrecargar el valor de retorno,
+hace que el manejo de errores sea agradable, pero diferente a otros lenguajes.
+
+Go tambien tiene alguna funcione integradas para señalar y recuperarse de condiciones realmente excepcionales.
+El mecanismo de recuperacion solo de ejecuta solamente como parte del estado de una funcion que es generado despues de un error,
+el cual es suficiente para manejar una catastrofe, pero no requiere estructuras de control adicionales.
+
+
+El paquete  builtin, tiene el tipo error (interfaz), donde nil representa la ausencia de error, de lo contrario retorna un string.
+
+EL paquete errors para definif errores personalizados, tiene una funcion que recibe un parametro y retorna un error. este paquete implementa la interfaz error.
