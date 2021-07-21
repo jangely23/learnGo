@@ -1,4 +1,12 @@
-//extraer valores de un canal con for range
+/*haz que este codigo funcione, con buffer y funciones literales:
+func main() {
+	c := make(chan int)
+
+	c <- 42
+
+	fmt.Println(<-c)
+}
+*/
 
 package main
 
@@ -7,25 +15,15 @@ import (
 )
 
 func main() {
-	c := gen()
-	recibir(c)
+	c := make(chan int)     //canal de tipo entero
+	c2 := make(chan int, 1) //canal con 1 bufer
 
-	fmt.Println("A punto de finalizar.")
-}
-
-func gen() <-chan int {
-	c := make(chan int)
-	go func() {
-		for i := 0; i < 10; i++ {
-			c <- i
-		}
-		close(c)
+	go func() { // funcion anonima autoejecutable (funcion literal)
+		c <- 42
 	}()
-	return c
-}
 
-func recibir(c <-chan int) {
-	for v := range c {
-		fmt.Println(v)
-	}
+	c2 <- 42 //envia valor al bufer
+
+	fmt.Println(<-c)
+	fmt.Println(<-c2)
 }
